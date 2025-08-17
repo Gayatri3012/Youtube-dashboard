@@ -6,21 +6,16 @@ const {youtubeAPIRequest} = require("./utils/youtubeApiRequest.js");
 
 const app = express();
 const allowedOrigins = [
-  "https://youtube-dashboard-xi.vercel.app/", 
+  "https://youtube-dashboard-xi.vercel.app", 
   "http://localhost:3000", 
 ];
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin: allowedOrigins,
     credentials: true,
   })
 );
+app.use(cors());
 app.use(express.json());
 const EventLog = require('./models/eventLog'); 
 
