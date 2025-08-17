@@ -1,6 +1,6 @@
 const { refreshAccessToken } = require('../utils/googleAuth'); 
 
-const {youtubeAPIRequest} = require('../utils/youtubeAPIRequest');
+const {youtubeAPIRequest} = require('../utils/youtubeApiRequest');
 
 exports.getComments = async (req, res) => {
   const videoId = req.params.videoId;
