@@ -13,7 +13,7 @@ function VideoDetails({ videoId }) {
   const token = process.env.REACT_APP_TOKEN;
 
   useEffect(() => {
-    fetch(`https://cactrofullstack17august.onrender.com/video/${videoId}`)
+    fetch(`https://youtube-dashboard-eda3.onrender.com/video/${videoId}`)
       .then(res => res.json())
       .then(data => {
         if (data && data.snippet) {
@@ -31,7 +31,7 @@ function VideoDetails({ videoId }) {
     e.preventDefault();
     setMessage('');
 
-    const res = await fetch(`https://cactrofullstack17august.onrender.com/video/${videoId}`, {
+    const res = await fetch(`https://youtube-dashboard-eda3.onrender.com/video/${videoId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

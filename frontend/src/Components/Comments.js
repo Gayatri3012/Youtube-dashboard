@@ -14,7 +14,7 @@ function Comments({ videoId, accessToken }) {
     
     if (!accessToken) return;
 
-      fetch('https://cactrofullstack17august.onrender.com/getChannelId', {
+      fetch('https://youtube-dashboard-eda3.onrender.com/getChannelId', {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -28,7 +28,7 @@ function Comments({ videoId, accessToken }) {
       })
 
 
-    fetch(`https://cactrofullstack17august.onrender.com/comment/${videoId}`, {
+    fetch(`https://youtube-dashboard-eda3.onrender.com/comment/${videoId}`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
@@ -56,7 +56,7 @@ function Comments({ videoId, accessToken }) {
     };
 
     try {
-      const res = await fetch(`https://cactrofullstack17august.onrender.com/comment`, {
+      const res = await fetch(`https://youtube-dashboard-eda3.onrender.com/comment`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -85,7 +85,7 @@ function Comments({ videoId, accessToken }) {
       ]);
       setNewComment('');
 
-      await fetch('https://cactrofullstack17august.onrender.com/event', {
+      await fetch('https://youtube-dashboard-eda3.onrender.com/event', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ function Comments({ videoId, accessToken }) {
     };
     console.log('🟢 Sending reply with text:', replyText);
     try {
-      const res = await fetch('https://cactrofullstack17august.onrender.com/comment/reply', {
+      const res = await fetch('https://youtube-dashboard-eda3.onrender.com/comment/reply', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -158,7 +158,7 @@ function Comments({ videoId, accessToken }) {
 
       setReplyTexts(prev => ({ ...prev, [parentId]: '' }));
 
-      await fetch('https://cactrofullstack17august.onrender.com/event', {
+      await fetch('https://youtube-dashboard-eda3.onrender.com/event', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -183,7 +183,7 @@ function Comments({ videoId, accessToken }) {
     setError('');
 
     try {
-    const res = await fetch(`https://cactrofullstack17august.onrender.com/comment/${commentId}`, {
+    const res = await fetch(`https://youtube-dashboard-eda3.onrender.com/comment/${commentId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -214,7 +214,7 @@ function Comments({ videoId, accessToken }) {
       );
       
 
-      await fetch('https://cactrofullstack17august.onrender.com/event', {
+      await fetch('https://youtube-dashboard-eda3.onrender.com/event', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

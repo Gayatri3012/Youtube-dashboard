@@ -17,7 +17,7 @@ const Notes = ({ videoId }) => {
           ...(search ? { search } : {}),
         });
   
-        const res = await fetch(`https://cactrofullstack17august.onrender.com/note?${params.toString()}`);
+        const res = await fetch(`https://youtube-dashboard-eda3.onrender.com/note?${params.toString()}`);
         const data = await res.json();
         setNotes(data);
       } catch (error) {
@@ -36,7 +36,7 @@ const Notes = ({ videoId }) => {
       };
   
       try {
-          const res = await fetch('https://cactrofullstack17august.onrender.com/note', {
+          const res = await fetch('https://youtube-dashboard-eda3.onrender.com/note', {
             method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
