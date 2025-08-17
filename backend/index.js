@@ -5,7 +5,22 @@ require("dotenv").config();
 const {youtubeAPIRequest} = require("./utils/youtubeAPIRequest"); // Assuming this is a utility function to handle YouTube API requests
 
 const app = express();
-app.use(cors());
+const allowedOrigins = [
+  "https://youtube-dashboard-xi.vercel.app/", 
+  "http://localhost:3000", 
+];
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 app.use(express.json());
 const EventLog = require('./models/eventLog'); 
 
