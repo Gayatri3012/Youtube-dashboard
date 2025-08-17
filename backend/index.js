@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
-const {youtubeAPIRequest} = require("./utils/youtubeAPIRequest"); // Assuming this is a utility function to handle YouTube API requests
+const {youtubeAPIRequest} = require("./utils/youtubeAPIRequest.js"); 
 
 const app = express();
 const allowedOrigins = [
